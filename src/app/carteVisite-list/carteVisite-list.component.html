@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Carte visite List</h2>
+    </div>
+    <div class="panel-body">
+      <div >
+      <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>Prix Unitaire</th>
+            <th>Type de papier</th>
+            <th>Plastifiée</th>
+            <th>Quatité en stock</th>
+            <th>Hauteur</th>
+            <th>Réference</th>
+            <th>Largeur</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carteVisite of carteVisites | async">            
+            <td>{{carteVisite.prixUnitaire}}</td>
+            <td>{{carteVisite.typePapier}}</td>
+            <td>{{carteVisite.plastifier}}</td>
+            <td>{{carteVisite.quantiteStock}}</td>
+            <td>{{carteVisite.hauteur}}</td>
+            <td>{{carteVisite.reference}}</td>
+            <td>{{carteVisite.largeur}}</td>
+            <td>
+              <button (click)="carteVisiteDetails(carteVisite.id)" class="btn btn-info" style="margin: 10px;">Details</button><br>
+              <button (click)="updateCarteVisite(carteVisite)" class="btn btn-success" style="margin: 10px">Update</button>
+              <button (click)="deleteCarteVisite(carteVisite.id)" class="btn btn-danger" style="margin: 10px">Delete</button>                           
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>

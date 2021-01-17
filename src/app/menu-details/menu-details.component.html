@@ -1,0 +1,32 @@
+<h2>Menu Details</h2> 
+
+<hr/>
+<div *ngIf="menu">
+  
+  <div>
+    <label><b>Prix unitaire : </b></label> {{menu.prixUnitaire}}
+  </div>
+  <div>
+    <label><b>Type de papier : </b></label> {{menu.typePapier}}
+  </div>
+  <div>
+    <label><b>Nombres de pages : </b></label> {{menu.nombrePages}}
+  </div>
+  <div>
+    <label><b>Quantité en stock : </b></label> {{menu.quantiteStock}}
+  </div>
+  <div>
+    <label><b>Hauteur: </b></label> {{menu.hauteur}}
+  </div>
+  <div>
+    <label><b>Reference : </b></label> {{menu.reference}}
+  </div>
+  <div>
+    <label><b>Largeur : </b></label> {{menu.largeur}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Agenda List</button><br>

@@ -10,6 +10,36 @@
     "src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/app/app.module.ts",
+    "src/environments/environment.ts",
+    "src/app/app-routing.module.ts",
+    "src/app/app.component.ts",
+    "src/app/create-carteVisite/create-carteVisite.component.ts",
+    "src/app/carteVisite-details/carteVisite-details.component.ts",
+    "src/app/carteVisite-list/carteVisite-list.component.ts",
+    "src/app/update-carteVisite/update-carteVisite.component.ts",
+    "src/app/carteVisite.service.ts",
+    "src/app/carteVisite.ts", 
+    "src/app/create-agenda/create-agenda.component.ts",
+    "src/app/agenda-details/agenda-details.component.ts",
+    "src/app/agenda-list/agenda-list.component.ts",
+    "src/app/update-agenda/update-agenda.component.ts",
+    "src/app/agenda.service.ts",
+    "src/app/agenda.ts", 
+    "src/app/create-flyer/create-flyer.component.ts",
+    "src/app/flyer-details/flyer-details.component.ts",
+    "src/app/flyer-list/flyer-list.component.ts",
+    "src/app/update-flyer/update-flyer.component.ts",
+    "src/app/flyer.service.ts",
+    "src/app/flyer.ts", 
+    "src/app/create-menu/create-menu.component.ts",
+    "src/app/menu-details/menu-details.component.ts",
+    "src/app/menu-list/menu-list.component.ts",
+    "src/app/update-menu/update-menu.component.ts",
+    "src/app/menu.service.ts",
+    "src/app/menu.ts"
+
   ]
+  
 }

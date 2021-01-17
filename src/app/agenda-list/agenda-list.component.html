@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Agenda List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th>Prix Unitaire</th>
+            <th>Type de papier</th>
+            <th>File</th>
+            <th>Quantité en stock</th>
+            <th>Hauteur</th>
+            <th>Réference</th>
+            <th>Largeur</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+ 
+        <tbody>
+          <tr *ngFor="let agenda of agendas | async">
+            <td>{{agenda.prixUnitaire}}</td>
+            <td>{{agenda.typePapier}}</td>
+            <td>{{agenda.fileOuNon}}</td>
+            <td>{{agenda.quantiteStock}}</td>
+            <td>{{agenda.hauteur}}</td>
+            <td>{{agenda.reference}}</td>
+            <td>{{agenda.largeur}}</td>
+            <td>
+                <button (click)="agendaDetails(agenda.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                <br>
+                <button (click)="updateAgenda(agenda)" class="btn btn-success" style="margin: 10px">Update</button>
+                <button (click)="deleteAgenda(agenda.id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

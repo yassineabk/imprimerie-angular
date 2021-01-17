@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Menu List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Prix Unitaire</th>
+            <th>Type de papier</th>
+            <th>Nombres de pages</th>
+            <th>Quantité en stock</th>
+            <th>Hauteur</th>
+            <th>Réference</th>
+            <th>Largeur</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+ 
+        <tbody>
+          <tr *ngFor="let menu of menus | async">
+            <td>{{menu.prixUnitaire}}</td>
+            <td>{{menu.typePapier}}</td>
+            <td>{{menu.nombrePages}}</td>
+            <td>{{menu.quantiteStock}}</td>
+            <td>{{menu.hauteur}}</td>
+            <td>{{menu.reference}}</td>
+            <td>{{menu.largeur}}</td>
+            <td><button (click)="deleteMenu(menu.id)" class="btn btn-danger">Delete</button>
+                <button (click)="menuDetails(menu.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

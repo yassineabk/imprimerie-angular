@@ -1,0 +1,28 @@
+<h2>Flyer Details</h2> 
+
+<hr/>
+<div *ngIf="flyer">
+  <div>
+    <label><b>Prix unitaire : </b></label> {{flyer.prixUnitaire}}
+  </div>
+  <div>
+    <label><b>Type de papier : </b></label> {{flyer.typePapier}}
+  </div>
+  <div>
+    <label><b>Quantité en stock : </b></label> {{flyer.quantiteStock}}
+  </div>
+  <div>
+    <label><b>Hauteur: </b></label> {{flyer.hauteur}}
+  </div>
+  <div>
+    <label><b>Reference : </b></label> {{flyer.reference}}
+  </div>
+  <div>
+    <label><b>Largeur : </b></label> {{flyer.largeur}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Flyer List</button><br>

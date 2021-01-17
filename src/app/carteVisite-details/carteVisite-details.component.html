@@ -1,0 +1,38 @@
+<h2>CarteVisite Details</h2> 
+
+<hr/>
+<div *ngIf="carteVisite">
+   <!--private BigDecimal prixUnitaire ;
+      private String typePapier ;
+      private Boolean plastifier ;
+      private Long quantiteStock ;
+      private Long hauteur ;
+      private String reference ;
+      private Long largeur ;-->
+  <div>
+    <label><b>Prix unitaire : </b></label> {{carteVisite.prixUnitaire}}
+  </div>
+  <div>
+    <label><b>Type de papier : </b></label> {{carteVisite.typePapier}}
+  </div>
+  <div>
+    <label><b>Plastifiée : </b></label> {{carteVisite.plastifier}}
+  </div>
+  <div>
+    <label><b>Quantité en stock : </b></label> {{carteVisite.quantiteStock}}
+  </div>
+  <div>
+    <label><b>Hauteur: </b></label> {{carteVisite.hauteur}}
+  </div>
+  <div>
+    <label><b>Reference : </b></label> {{carteVisite.reference}}
+  </div>
+  <div>
+    <label><b>Largeur : </b></label> {{carteVisite.largeur}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to CarteVisite List</button><br>

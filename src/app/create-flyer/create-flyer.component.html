@@ -1,0 +1,41 @@
+<h3>Create Flyer</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="prixUnitaire">Prix unitaire</label>
+      <input type="number" class="form-control" id="prixUnitaire" required [(ngModel)]="flyer.prixUnitaire" name="prixUnitaire">
+    </div>
+
+    <div class="form-group">
+      <label for="typePapier">Type de papier</label>
+      <input type="text" class="form-control" id="typePapier" required [(ngModel)]="flyer.typePapier" name="typePapier">
+    </div>
+
+    <div class="form-group">
+      <label for="quantiteStock">Quantité en stock</label>
+      <input type="number" class="form-control" id="quantiteStock" required [(ngModel)]="flyer.quantiteStock" name="quantiteStock">
+    </div>
+
+    <div class="form-group">
+      <label for="hauteur">Hauteur</label>
+      <input type="number" class="form-control" id="hauteur" required [(ngModel)]="flyer.hauteur" name="hauteur">
+    </div>
+
+    <div class="form-group">
+      <label for="reference">Réference</label>
+      <input type="text" class="form-control" id="reference" required [(ngModel)]="flyer.reference" name="reference">
+    </div>
+
+    <div class="form-group">
+      <label for="largeur">Largeur</label>
+      <input type="number" class="form-control" id="largeur" required [(ngModel)]="flyer.largeur" name="largeur">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

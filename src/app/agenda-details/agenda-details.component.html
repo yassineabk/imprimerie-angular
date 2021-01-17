@@ -1,0 +1,40 @@
+<h2>Agenda Details</h2> 
+
+<hr/>
+<div *ngIf="agenda">
+  <!--private Long id;
+
+  private String typePapier ;
+  private BigDecimal prixUnitaire ;
+  private Boolean fileOuNon ;
+  private Long quantiteStock ;
+  private String reference ;
+  private Long hauteur ;
+  private Long largeur ;-->
+  <div>
+    <label><b>Prix unitaire : </b></label> {{agenda.prixUnitaire}}
+  </div>
+  <div>
+    <label><b>Type de papier : </b></label> {{agenda.typePapier}}
+  </div>
+  <div>
+    <label><b>Files : </b></label> {{agenda.fileOuNon}}
+  </div>
+  <div>
+    <label><b>Quantité en stock : </b></label> {{agenda.quantiteStock}}
+  </div>
+  <div>
+    <label><b>Hauteur: </b></label> {{agenda.hauteur}}
+  </div>
+  <div>
+    <label><b>Reference : </b></label> {{agenda.reference}}
+  </div>
+  <div>
+    <label><b>Largeur : </b></label> {{agenda.largeur}}
+  </div>
+  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Agenda List</button><br>

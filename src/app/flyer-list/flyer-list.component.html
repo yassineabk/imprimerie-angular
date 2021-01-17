@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Flyer List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Prix Unitaire</th>
+            <th>Type de papier</th>
+            <th>Quantité en stock</th>
+            <th>Hauteur</th>
+            <th>Réference</th>
+            <th>Largeur</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+ 
+        <tbody>
+          <tr *ngFor="let flyer of flyers | async">
+            <td>{{flyer.prixUnitaire}}</td>
+            <td>{{flyer.typePapier}}</td>
+            <td>{{flyer.quantiteStock}}</td>
+            <td>{{flyer.hauteur}}</td>
+            <td>{{flyer.reference}}</td>
+            <td>{{flyer.largeur}}</td>
+            <td><button (click)="deleteFlyer(flyer.id)" class="btn btn-danger">Delete</button>
+                <button (click)="flyerDetails(flyer.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
