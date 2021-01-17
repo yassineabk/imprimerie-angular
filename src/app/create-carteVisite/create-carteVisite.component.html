@@ -39,6 +39,10 @@
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
+<p-fileUpload name="myfile[]" customUpload="true"  [hidden]="!submitted"  (uploadHandler)="onUpload($event)" multiple="multiple">
+  <ng-template pTemplate="content">
+  </ng-template>
+</p-fileUpload>
 
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>

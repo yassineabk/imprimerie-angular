@@ -21,11 +21,13 @@ export class CarteVisiteDetailsComponent implements OnInit {
     this.carteVisite = new CarteVisite();
 
     this.id = this.route.snapshot.params['id'];
-    
+
     this.carteVisiteService.getCarteVisite(this.id)
       .subscribe(data => {
         console.log(data)
         this.carteVisite = data;
+        this.carteVisite.url = 'data:image/jpg;base64,' + this.carteVisite.content;
+        console.log(this.carteVisite.url);
       }, error => console.log(error));
   }
 

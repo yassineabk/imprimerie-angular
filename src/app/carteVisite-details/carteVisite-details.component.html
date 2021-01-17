@@ -1,4 +1,4 @@
-<h2>CarteVisite Details</h2> 
+<h2>CarteVisite Details</h2>
 
 <hr/>
 <div *ngIf="carteVisite">
@@ -30,7 +30,11 @@
   <div>
     <label><b>Largeur : </b></label> {{carteVisite.largeur}}
   </div>
-  
+  <div>
+    <label><b>Contenu : </b></label>
+    <img src="{{carteVisite.url}}" height="80" width="80">
+  </div>
+
 </div>
 
 <br>

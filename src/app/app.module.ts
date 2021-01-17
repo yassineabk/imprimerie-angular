@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateCarteVisiteComponent } from './update-carteVisite/update-carteVisite.component';
 
 import {DataTablesModule} from 'angular-datatables';
-
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { CreateAgendaComponent } from './create-agenda/create-agenda.component';
 import { AgendaDetailsComponent } from './agenda-details/agenda-details.component';
@@ -58,7 +58,8 @@ import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.c
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

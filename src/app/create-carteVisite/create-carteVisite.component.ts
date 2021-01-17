@@ -12,6 +12,7 @@ export class CreateCarteVisiteComponent implements OnInit {
 
   carteVisite: CarteVisite = new CarteVisite();
   submitted = false;
+  uploadedFiles: Array<File> = new Array<File>();
 
   constructor(private carteVisiteService: CarteVisiteService,
     private router: Router) { }
@@ -27,19 +28,28 @@ export class CreateCarteVisiteComponent implements OnInit {
   save() {
     this.carteVisiteService
     .createCarteVisite(this.carteVisite).subscribe(data => {
-      console.log(data)
-      this.carteVisite = new CarteVisite();
-      this.gotoList();
-    }, 
+      console.log(data);
+    },
     error => console.log(error));
   }
 
   onSubmit() {
     this.submitted = true;
-    this.save();    
+    this.save();
   }
 
   gotoList() {
     this.router.navigate(['/carteVisites']);
+  }
+
+  onUpload(event) {
+    for (const file of event.files) {
+      this.uploadedFiles.push(file);
+    }
+    console.log(this.uploadedFiles);
+    this.carteVisiteService.upload(this.uploadedFiles, this.carteVisite.reference);
+    this.uploadedFiles = [];
+    this.carteVisite = new CarteVisite();
+    this.gotoList();
   }
 }

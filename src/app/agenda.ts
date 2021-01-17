@@ -4,8 +4,10 @@ export class Agenda {
     typePapier: string;
     fileOuNon: boolean;
     quantiteStock: number;
-    hauteur: number; 
+    hauteur: number;
     reference: string;
     largeur: number;
     active: boolean;
+   content: Blob;
+   url: string;
 }

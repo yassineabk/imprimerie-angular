@@ -1,4 +1,4 @@
-<h2>Agenda Details</h2> 
+<h2>Agenda Details</h2>
 
 <hr/>
 <div *ngIf="agenda">
@@ -32,7 +32,10 @@
   <div>
     <label><b>Largeur : </b></label> {{agenda.largeur}}
   </div>
-  
+  <div>
+    <label><b>Contenu : </b></label>
+    <img src="{{agenda.url}}" height="80" width="80">
+  </div>
 </div>
 
 <br>

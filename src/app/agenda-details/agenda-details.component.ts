@@ -21,11 +21,12 @@ export class AgendaDetailsComponent implements OnInit {
     this.agenda = new Agenda();
 
     this.id = this.route.snapshot.params['id'];
-    
+
     this.agendaService.getAgenda(this.id)
       .subscribe(data => {
         console.log(data)
         this.agenda = data;
+        this.agenda.url = 'data:image/jpg;base64,' + this.agenda.content;
       }, error => console.log(error));
   }
 

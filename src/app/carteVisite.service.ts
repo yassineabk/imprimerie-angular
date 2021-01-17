@@ -16,7 +16,7 @@ export class CarteVisiteService {
   }
 
   createCarteVisite(carteVisite: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, carteVisite);
+    return this.http.post(`${this.baseUrl}/`, carteVisite);
   }
 
   updateCarteVisite(value: any): Observable<Object> {
@@ -29,5 +29,20 @@ export class CarteVisiteService {
 
   getCarteVisitesList(): Observable<any> {
     return this.http.get(`${this.baseUrl}/`);
+  }
+
+  // tslint:disable-next-line:typedef
+  upload(files: Array<File>, reference: string) {
+    const formData: FormData = new FormData();
+    console.log(files);
+    for (const file of files) {
+      formData.append('file', file);
+      console.log(formData);
+      this.http.post(this.baseUrl + '/upload/' + reference, formData).subscribe(value => {
+        if (value > 0) {
+          console.log('carte Visite successfuly updated with file');
+        } else { console.log('erreur ?'); }
+      });
+    }
   }
 }

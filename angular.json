@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "angular10-springboot-client"
+  "defaultProject": "angular10-springboot-client",
+  "cli": {
+    "analytics": "e2a228cf-9338-4dde-9258-d5a0bc2db783"
+  }
 }

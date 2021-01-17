@@ -4,8 +4,10 @@ export class CarteVisite {
     typePapier: string;
     plastifier: boolean;
     quantiteStock: number;
-    hauteur: number; 
+    hauteur: number;
+    content: Blob;
     reference: string;
     largeur: number;
     active: boolean;
+    url: string;
 }
