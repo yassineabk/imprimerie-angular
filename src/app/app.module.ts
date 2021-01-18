@@ -12,6 +12,9 @@ import { UpdateCarteVisiteComponent } from './update-carteVisite/update-carteVis
 import {DataTablesModule} from 'angular-datatables';
 import {FileUploadModule} from 'primeng/fileupload';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+
 import { CreateAgendaComponent } from './create-agenda/create-agenda.component';
 import { AgendaDetailsComponent } from './agenda-details/agenda-details.component';
 import { AgendaListComponent } from './agenda-list/agenda-list.component';
@@ -28,6 +31,10 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { UpdateMenuComponent } from './update-menu/update-menu.component';
 import { LoginFormComponent } from './Auth-Comp/login-form/login-form.component';
 import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.component';
+import { HomePageComponent } from './User/home-page/home-page.component';
+import { ProductPageComponent } from './User/product-page/product-page.component';
+import { CheckoutComponent } from './User/checkout/checkout.component';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,9 +58,14 @@ import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.c
     MenuListComponent,
     UpdateMenuComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    HomePageComponent,
+    ProductPageComponent,
+    CheckoutComponent,
+    NavComponent
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,

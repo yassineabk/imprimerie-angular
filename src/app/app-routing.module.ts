@@ -21,15 +21,23 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { UpdateMenuComponent } from './update-menu/update-menu.component';
 import { LoginFormComponent } from './Auth-Comp/login-form/login-form.component';
 import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.component';
+import { HomePageComponent } from './User/home-page/home-page.component';
+import { ProductPageComponent } from './User/product-page/product-page.component';
+import { CheckoutComponent } from './User/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginFormComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'product', component: ProductPageComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'register', component: RegisterFormComponent },
   { path: 'carteVisites', component: CarteVisiteListComponent },
   { path: 'add', component: CreateCarteVisiteComponent },
   { path: 'update/:id', component: UpdateCarteVisiteComponent },
   { path: 'details/:id', component: CarteVisiteDetailsComponent },
+
+  { path: 'detailsProduct/:id', component: ProductPageComponent },
   
   { path: 'agendas', component: AgendaListComponent },
   { path: 'addAgenda', component: CreateAgendaComponent },
