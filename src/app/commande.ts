@@ -8,6 +8,6 @@ export class Commande {
     prixTotal : number;
     reference : string;
     user : number;
-    produits: Produit[] = [];
+    produitsVo: Produit[] = [];
 
 }

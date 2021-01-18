@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subject } from "rxjs";
 import { Panier } from 'src/app/panier';
@@ -7,6 +7,9 @@ import { ProduitService} from '../../produit.service'
 import { PanierService } from '../../panier.service'
 import { Commande } from 'src/app/commande';
 import { CommandeService } from 'src/app/commande.service';
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-product-page',
@@ -19,6 +22,8 @@ export class ProductPageComponent implements OnInit {
   pr : number;
   product: Produit;
   commande : Commande = new Commande();
+  commande2 : Commande = new Commande();
+  productList : Produit[] = [];
 
   constructor(private route: ActivatedRoute,private commandeService: CommandeService,
     private productService: ProduitService,private router: Router) { }
@@ -42,19 +47,25 @@ export class ProductPageComponent implements OnInit {
       this.commande = new Commande();
       this.qte = Qte;
       //this.commande.prix_total = this.qte*this.product.prixUnitaire;
-      this.commande.prixTotal = this.qte * this.pr;
+      this.commande.prixTotal = this.commande.prixTotal+ (this.qte * this.pr);
       console.log(this.pr);
       this.commande.dateAchat = new Date();
       this.commande.etat = "en attente";
       this.commande.reference = "REF002021-"+this.commande.dateAchat;
-      this.commande.produits.push(this.product);
+      this.commande.produitsVo.push(this.product);
       console.log(this.commande);
+      this.commande2.produitsVo = this.commande.produitsVo;
+      console.log(this.commande2);
+      
+      /*
       this.commandeService.createCommande(this.commande).subscribe(data => {
         console.log(data);
       },
       error => console.log(error));
+      */
+      
 
-      //this.router.navigate(['home']);
+      this.router.navigate(['checkout']);
     }
 }
 
