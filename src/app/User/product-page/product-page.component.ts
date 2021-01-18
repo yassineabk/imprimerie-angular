@@ -26,7 +26,7 @@ export class ProductPageComponent implements OnInit {
     ngOnInit(): void {
       //this.panier.listProducts = [];
       this.id = this.route.snapshot.params['id'];
-      
+
       //this.qte = this.route.snapshot.params['qte'];
 
       this.productService.getProduit(this.id)
@@ -36,23 +36,24 @@ export class ProductPageComponent implements OnInit {
         this.product.url = 'data:image/jpg;base64,' + this.product.content;
       }, error => console.log(error));
     }
-    
+
     sendCommande(Qte : number){
       this.pr = this.product.prixUnitaire;
       this.commande = new Commande();
       this.qte = Qte;
       //this.commande.prix_total = this.qte*this.product.prixUnitaire;
-      this.commande.prix_total = this.qte*this.pr;
+      this.commande.prixTotal = this.qte * this.pr;
       console.log(this.pr);
-      this.commande.date_achat = new Date();
+      this.commande.dateAchat = new Date();
       this.commande.etat = "en attente";
-      this.commande.reference = "REF002021-"+this.commande.date_achat;
+      this.commande.reference = "REF002021-"+this.commande.dateAchat;
+      this.commande.produits.push(this.product);
       console.log(this.commande);
       this.commandeService.createCommande(this.commande).subscribe(data => {
         console.log(data);
       },
       error => console.log(error));
-      
+
       //this.router.navigate(['home']);
     }
 }

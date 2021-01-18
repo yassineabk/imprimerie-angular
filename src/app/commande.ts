@@ -1,10 +1,13 @@
+import {Produit} from "./produit";
+
 export class Commande {
 
     id : number;
-    date_achat : Date;
+    dateAchat : Date;
     etat : string;
-    prix_total : number;
+    prixTotal : number;
     reference : string;
     user : number;
+    produits: Produit[] = [];
 
 }
