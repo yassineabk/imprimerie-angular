@@ -6,6 +6,7 @@ import { User } from 'src/app/user';
 import { ProductPageComponent } from '../product-page/product-page.component';
 import { UserServiceService } from '../../user-service.service'
 import { Produit } from 'src/app/produit';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,7 @@ export class CheckoutComponent implements OnInit {
 
   id : number;
   commande : Commande = new Commande();
-  commande101 : Commande = new Commande();
+  commandes: Commande[];
   user : User;
 
   constructor(private route: ActivatedRoute,private commandeService:CommandeService,
@@ -26,23 +27,24 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     //this.id = this.route.snapshot.params['id'];
-    this.commande101 = this.productComp.commande2;
-    console.log(this.commande101);
+    this.commandes = this.commandeService.getCommandesList();
+    console.log("THIS IS IT " + this.commandes);
   }
   onSubmit(){
-    this.save();
+    //this.save();
+    this.router.navigate(['/home']);
   }
   save() {
     this.commandeService
     .createCommande(this.commande).subscribe(data => {
       console.log(data)
       this.commande = new Commande();
-      this.gotoList();
+      this.goHome();
     }, 
     error => console.log(error));
   }
 
-  gotoList() {
+  goHome() {
     this.router.navigate(['/home']);
   }
 

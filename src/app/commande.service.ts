@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Commande } from './commande';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { Observable } from 'rxjs';
 export class CommandeService {
 
   private baseUrl = 'http://localhost:8036/generated/commande';
+  private commandes : Commande[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -27,8 +29,13 @@ export class CommandeService {
     return this.http.delete(`${this.baseUrl}/id/${id}`, { responseType: 'text' });
   }
 
-  getCommandesList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/`);
+  getCommandesList(): Commande[] {
+    this.http.get<Commande[]>(`${this.baseUrl}/`).subscribe(value => {
+      console.log(value[0].produitsVo + "YOOOO");
+      this.commandes.push(value[value.length-1]);
+    });
+    console.log(this.commandes + "YEES");
+    return this.commandes;
   }
 
 }

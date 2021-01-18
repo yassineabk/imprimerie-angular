@@ -22,7 +22,6 @@ export class ProductPageComponent implements OnInit {
   pr : number;
   product: Produit;
   commande : Commande = new Commande();
-  commande2 : Commande = new Commande();
   productList : Produit[] = [];
 
   constructor(private route: ActivatedRoute,private commandeService: CommandeService,
@@ -46,25 +45,16 @@ export class ProductPageComponent implements OnInit {
       this.pr = this.product.prixUnitaire;
       this.commande = new Commande();
       this.qte = Qte;
-      //this.commande.prix_total = this.qte*this.product.prixUnitaire;
-      this.commande.prixTotal = this.commande.prixTotal+ (this.qte * this.pr);
-      console.log(this.pr);
+      this.commande.prixTotal = this.qte*this.product.prixUnitaire;
       this.commande.dateAchat = new Date();
       this.commande.etat = "en attente";
       this.commande.reference = "REF002021-"+this.commande.dateAchat;
       this.commande.produitsVo.push(this.product);
-      console.log(this.commande);
-      this.commande2.produitsVo = this.commande.produitsVo;
-      console.log(this.commande2);
-      
-      /*
       this.commandeService.createCommande(this.commande).subscribe(data => {
-        console.log(data);
-      },
-      error => console.log(error));
-      */
-      
-
+      console.log(data)
+      this.commande = new Commande();
+    }, 
+    error => console.log(error));
       this.router.navigate(['checkout']);
     }
 }
